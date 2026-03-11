@@ -3,7 +3,7 @@
 // Parent Class
 class BangunDatar {
     public function hitungLuas() {
-        return 0; // Nilai default, akan di-override oleh Child Class
+        return 0;
     }
 }
 
@@ -15,7 +15,6 @@ class Persegi extends BangunDatar {
         $this->sisi = $sisi;
     }
 
-    // Overriding method hitungLuas()
     public function hitungLuas() {
         return $this->sisi * $this->sisi;
     }
@@ -31,7 +30,6 @@ class Lingkaran extends BangunDatar {
 
     // Overriding method hitungLuas()
     public function hitungLuas() {
-        // Menggunakan fungsi pi() bawaan PHP untuk nilai π
         return pi() * $this->jariJari * $this->jariJari; 
     }
 }
@@ -46,21 +44,20 @@ class Segitiga extends BangunDatar {
         $this->tinggi = $tinggi;
     }
 
-    // Overriding method hitungLuas()
+    // Overriding 
     public function hitungLuas() {
         return 0.5 * $this->alas * $this->tinggi;
     }
 }
 
-// --- Contoh Pemanggilan / Pengujian ---
-
-$persegi = new Persegi(5); // Sisi = 5
+$persegi = new Persegi(5); 
 echo "Luas Persegi: " . $persegi->hitungLuas() . "<br>";
 
-$lingkaran = new Lingkaran(7); // Jari-jari = 7
+$lingkaran = new Lingkaran(7); 
 echo "Luas Lingkaran: " . $lingkaran->hitungLuas() . "<br>";
 
-$segitiga = new Segitiga(4, 6); // Alas = 4, Tinggi = 6
+$segitiga = new Segitiga(4, 6); 
 echo "Luas Segitiga: " . $segitiga->hitungLuas() . "<br>";
+
 
 ?>
